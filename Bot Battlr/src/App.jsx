@@ -1,15 +1,16 @@
-import React from 'react'
-import Search from './components/Search'
+import {useState} from "react"
+import Search from "./components/Search"
+import BattlrList from "./components/BattlrList";
 
 function App() {
- 
-
-  return  <div className="App">
-    <Search />
+  const [battlrData,setBattlrData]=useState([])
+  return (
+    <div className="App">
+      
+      <Search battlrData={battlrData} setBattlrData={setBattlrData} />
+      <BattlrList  battlrData={battlrData}/>
     </div>
-
-    
-  
+  )
 }
 
-export default App
+export default App;
